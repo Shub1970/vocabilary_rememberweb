@@ -1,7 +1,8 @@
 import styled from "styled-components";
 
 export const OptionBar=styled.div`
-    
+    display:flex;
+    justify-content:center;
 label {
     font-family: sans-serif;
     font-size: 1rem;
