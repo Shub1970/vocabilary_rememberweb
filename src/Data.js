@@ -308,11 +308,6 @@ export const Data=[
                 sentence:"he was very jubilant and go to a train station"
             }
             ,{
-                id:12,
-                word:"Kindred",
-                sentence:"and he sees many people standing on the station most of them are kindred, he later finds out that most of them are nomads"
-            }
-            ,{
                 id:13,
                 word:"laudable",
                 sentence:"He meets some of them and tells his story, after listening story they say  you have done a really laudable thing "
@@ -371,6 +366,11 @@ export const Data=[
                 id:24,
                 word:"Vogue",
                 sentence:"still all nomads move to their respected destination in vogue dress."
+            }
+            ,{
+                id:25,
+                word:"Kindred",
+                sentence:"and he sees many people standing on the station most of them are kindred, he later finds out that most of them are nomads"
             }
         ]
     },

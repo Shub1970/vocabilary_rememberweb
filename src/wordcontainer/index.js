@@ -39,8 +39,9 @@ const Wordcont=()=>{
                         <>
                         {
                         word_string.map((inobj)=>{
+                            const {id,word,string}=inobj;
                         return(
-                            <Word_style type="button" onClick={()=>{
+                            <Word_style  type="button" onClick={()=>{
                                     setString({...inobj})
                                 }}
                             >
