@@ -1,11 +1,11 @@
 import React from 'react';
 import './App.css';
-import WordContainer from "./wordcontainer"
+import Story from './story';
 
 function App() {
   return (
     <div className="App">
-      <WordContainer />
+      <Story />
     </div>
   );
 }
