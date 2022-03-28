@@ -6,7 +6,7 @@ const Word = (sentence) => {
   const {state,Dispatch}=useReactContex();
   return (
     <Word_style onClick={()=>{Dispatch({type:"change_sentence",payload:sentence})}}>
-      
+      butt
     </Word_style>
   )
 }

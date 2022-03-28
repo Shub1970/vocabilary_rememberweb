@@ -4,6 +4,7 @@ import {Data} from "./Data"
 const reducer = (state,{type,payload}) => {
     if(type==='change_chapter'){
         const newstring_word=Data.filter(x=>x.chapter===payload)
+        console.log(newstring_word)
         return (
             {
                 ...state,topic:payload,word_string:newstring_word.string_word

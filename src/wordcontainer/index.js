@@ -5,13 +5,16 @@ const Wordcontainer=()=>{
     return(
         <>
         <h1>hellow wordcontainer</h1>
+        {console.log(state.word_string)}
         {
+            
             state.word_string.map((obj)=>{
                 const {id,word,sentence}=obj;
                 return(
-                        <Word props={sentence}>{word}</Word>
+                        <Word props={sentence} />
                 )
             })
+            
         }
         </>
         )
