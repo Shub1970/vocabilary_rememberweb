@@ -1,21 +1,20 @@
 import { useReactContex } from "../reactContex";
 import Word from "../word_button";
+import { WordCont } from "./wordcontainercss";
 const Wordcontainer=()=>{
     const {state,Dispatch}=useReactContex();
     return(
         <>
-        <h1>hellow wordcontainer</h1>
-        {console.log(state.word_string)}
+        <WordCont>
         {
-            
             state.word_string.map((obj)=>{
-                const {id,word,sentence}=obj;
                 return(
-                        <Word props={sentence} />
-                )
-            })
-            
-        }
+                    <Word {...obj} />
+                    )
+                })
+                
+            }
+        </WordCont>
         </>
         )
 }

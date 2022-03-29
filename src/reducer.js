@@ -2,12 +2,14 @@ import React from "react";
 import {Data} from "./Data"
 
 const reducer = (state,{type,payload}) => {
-    if(type==='change_chapter'){
-        const newstring_word=Data.filter(x=>x.chapter===payload)
-        console.log(newstring_word)
+    if(type==='chapter_change'){
+        const [newstring_word]=Data.filter(x=>x.chapter===payload)
+        
+        const {word_string:w_s}=newstring_word
+        console.log(w_s)
         return (
             {
-                ...state,topic:payload,word_string:newstring_word.string_word
+                ...state,topic:payload,word_string:w_s
             }
         )
     }

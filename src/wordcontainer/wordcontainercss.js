@@ -7,8 +7,6 @@ export const WordCont=styled.div`
         display:grid;
         grid-template-columns:repeat(auto-fit,minmax(100px,1fr));
         padding:10px;
-        // border-radius:10px;
+        border-radius:10px;
         row-gap:10px;
-        
-        
 `
