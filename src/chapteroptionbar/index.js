@@ -1,28 +1,31 @@
-import React from "react";
+import React,{useEffect} from "react";
+import { useReactContex } from "../reactContex";
+import { Data } from "../Data";
 import { OptionBar } from "./optionbarcss";
-
-function ChapterOptionBar(prop) {
-  const handlesubmit=(e)=>{
-          e.preventDefault();
-          console.log(e.targate)
-  }
-  return (
+const ChapterOpt = () => {
+    const {state,Dispatch}=useReactContex();
+    useEffect(() => {
+        const tempchap=Data.map((page)=>{
+            return (page.chapter)
+                })
+        Dispatch({type:"update_chapter",payload:tempchap})
+    }, [])
+    return (
+        <>
     <OptionBar>
-      <form action={handlesubmit}>
-        <label htmlFor="chapteroptionbar">Choose Chapter</label>
-        <select  id="chapteroptionbar">
-          {
-            prop.props.map((chapter)=>{
-              return(
-                <option value={chapter}>{chapter}</option>
-                )
-              })
+    <label htmlFor="option">Chapter</label>
+    <select name="option" onChange={(e)=>{Dispatch({type:'chapter_change',payload:e.target.value})}} >
+        {
+            state.chapter.map((chapter)=>{
+                return(
+                    <option value={chapter}>{chapter}</option>
+                    )
+                })
             }
-        </select>
-        <input type="submit" value="Submit" />
-      </form>
+    </select>
     </OptionBar>
+    </>
   )
 }
 
-export default ChapterOptionBar;
+export default ChapterOpt

@@ -1,10 +1,12 @@
-import React from "react";
+
 import {StringCont} from "./stringcontainercss"
-const Stringcont=(prop)=>{
+import { useReactContex } from "../reactContex";
+const Stringcont=()=>{
+    const {state,Dispatch}=useReactContex();
     return(
         <>
             <StringCont>
-                {prop.sentence}
+                {state.sentence}
             </StringCont>
         </>
     )

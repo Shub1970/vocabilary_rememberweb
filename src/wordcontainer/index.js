@@ -1,50 +1,21 @@
-import React, {useState,useEffect} from "react";
-import ChapterOptionBar from "../chapteroptionbar";
-import  {Data}  from "../Data"
-import Stringcont from "../stringcontainer";
-import {WordCont} from "./wordcontainercss"
-import { Word_style } from "./wordstyle";
-
-const Wordcont=()=>{
-    const [string, setString] = useState();
-    const [chap,setchap]=useState([]);
-    useEffect(() => {
-        const arr=[];
-        Data.map(({chapter,word_string})=>{
-            arr.push(chapter);
-            setchap(arr)
-        })
-    },[])
+import { useReactContex } from "../reactContex";
+import Word from "../word_button";
+import { WordCont } from "./wordcontainercss";
+const Wordcontainer=()=>{
+    const {state,Dispatch}=useReactContex();
     return(
         <>
-        <Stringcont {...{...string}} />
-        <ChapterOptionBar props={[...chap]} />
         <WordCont>
         {
-            Data.map((page)=>{
-                const {chapter,word_string}=page;
+            state.word_string.map((obj)=>{
                 return(
-                    <>
-                    {
-                        word_string.map((w_s)=>{
-                            const {id,word,st}=w_s;
-                        
-                            return(
-                                <Word_style type="button" onClick={()=>{
-                                    setString({...w_s})
-                                }}>
-                                {word.charAt(0)}
-                            </Word_style>
-                                )
-                            })
-                        }
-                    </>
-                )
+                    <Word {...obj} />
+                    )
+                })
+                
             }
-            )
-        }
         </WordCont>
         </>
         )
-        }
-export default Wordcont;
+}
+export default Wordcontainer;
